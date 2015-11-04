@@ -14,71 +14,159 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="match_parent"
+            android:layout_height="319dp"
+            android:src="@drawable/world0" />
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignBottom="@+id/imageView1"
+            android:layout_alignParentLeft="true"
+            android:layout_marginBottom="36dp"
+            android:layout_marginLeft="107dp"
+            android:background="@android:color/transparent"
+            android:text="oseaina" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_above="@+id/button1"
+            android:layout_marginLeft="62dp"
+            android:layout_toRightOf="@+id/button3"
+            android:background="@android:color/transparent"
+            android:text="europe" />
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_above="@+id/button2"
+            android:layout_toRightOf="@+id/button3"
+            android:background="@android:color/transparent"
+            android:text="africa" />
+
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_above="@+id/button3"
+            android:layout_toLeftOf="@+id/button12"
+            android:background="@android:color/transparent"
+            android:text="asia" />
+
+        <Button
+            android:id="@+id/button5"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_above="@+id/button4"
+            android:layout_marginBottom="52dp"
+            android:layout_toLeftOf="@+id/button4"
+            android:background="@android:color/transparent"
+            android:text="south" />
+
+        <Button
+            android:id="@+id/button12"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignLeft="@+id/button2"
+            android:layout_alignTop="@+id/button5"
+            android:layout_marginLeft="14dp"
+            android:layout_marginTop="18dp"
+            android:background="@android:color/transparent"
+            android:text="buk" />
+
+        <Button
+            android:id="@+id/button6"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_above="@+id/button12"
+            android:layout_alignLeft="@+id/button1"
+            android:layout_marginLeft="14dp"
+            android:background="@android:color/transparent"
+            android:text="north" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal" >
+
+
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal" >
 
-        <EditText
-            android:id="@+id/edit_text_out"
-            android:layout_width="49dp"
-            android:layout_height="88dp"
-            android:layout_gravity="bottom" />
-
         <Button
-            android:id="@+id/button1"
+            android:id="@+id/button7"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Asia" />
+            android:text="Sunny" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/button8"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Euro" />
+            android:text="Rainny" />
+
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/button9"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="south" />
+            android:text="Dust" />
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="bottom" >
 
         <Button
-            android:id="@+id/button4"
+            android:id="@+id/button10"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="oseania" />
+            android:text="Storm" />
 
         <Button
-            android:id="@+id/button5"
+            android:id="@+id/button11"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Africa" />
-
-        <Button
-            android:id="@+id/button6"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="north" />
+            android:text="Volcano" />
 
         <Button
             android:id="@+id/button_send"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="fill_parent"
             android:layout_weight="1"
+            android:background="#00ffff"
             android:text="@string/send" />
+
     </LinearLayout>
 
 </LinearLayout>

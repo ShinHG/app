@@ -76,7 +76,7 @@ public class BluetoothChat extends Activity {
     // Layout Views
     private TextView mTitle;
     private ListView mConversationView;
-    private EditText mOutEditText;
+    private ImageView mImage;
     private Button mSendButton;
     private Button mButton1;
     private Button mButton2;
@@ -84,6 +84,13 @@ public class BluetoothChat extends Activity {
     private Button mButton4;
     private Button mButton5;
     private Button mButton6;
+    private Button mButton7;
+    private Button mButton8;
+    private Button mButton9;
+    private Button mButton10;
+    private Button mButton11;
+    private Button mButton12;
+    private String weather="";
 
     // Name of the connected device
     private String mConnectedDeviceName = null;
@@ -107,7 +114,6 @@ public class BluetoothChat extends Activity {
         // Set up the window layout
         requestWindowFeature(Window.FEATURE_CUSTOM_TITLE);
         //setContentView(R.layout.main);
-        setContentView(new MyView(this));
         getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.custom_title);
 
         // Set up the custom title
@@ -128,21 +134,6 @@ public class BluetoothChat extends Activity {
         
     }
     
-    protected class MyView extends View {
-		public MyView(Context context) {
-			super(context);
-		}
-
-		public void onDraw(Canvas canvas) {
-			Paint Pnt = new Paint();
-			Pnt.setAntiAlias(true);
-
-			Bitmap world = BitmapFactory.decodeResource(getContext().getResources(), 
-					R.drawable.world);
-
-			canvas.drawBitmap(world, 30, 30, Pnt);
-		}
-	}
     
     @Override
     public void onStart() {
@@ -186,26 +177,17 @@ public class BluetoothChat extends Activity {
        // mConversationView = (ListView) findViewById(R.id.in);
         //mConversationView.setAdapter(mConversationArrayAdapter);
 
-        // Initialize the compose field with a listener for the return key
-        mOutEditText = (EditText) findViewById(R.id.edit_text_out);
-        mOutEditText.setOnEditorActionListener(mWriteListener);
+      
         
         // Initialize the send button with a listener that for click events
-        mSendButton = (Button) findViewById(R.id.button_send);
-        mSendButton.setOnClickListener(new OnClickListener() {
-            public void onClick(View v) {
-                // Send a message using content of the edit text widget
-                TextView view = (TextView) findViewById(R.id.edit_text_out);
-                String message = view.getText().toString();
-                sendMessage(message);
-            }
-        });
+        
         mButton1 = (Button) findViewById(R.id.button1);
         mButton1.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
                 // Send a message using content of the edit text widget
-                String message = "asia";
+                String message = "a";
                 sendMessage(message);
+                // mImage = (ImageView) findViewById(R.id.imageView1);
             }
         });
         
@@ -213,7 +195,7 @@ public class BluetoothChat extends Activity {
         mButton2.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
                 // Send a message using content of the edit text widget
-                String message = "euro";
+                String message = "b";
                 sendMessage(message);
             }
         });
@@ -222,7 +204,7 @@ public class BluetoothChat extends Activity {
         mButton3.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
                 // Send a message using content of the edit text widget
-                String message = "south";
+                String message = "c";
                 sendMessage(message);
             }
         });
@@ -231,7 +213,7 @@ public class BluetoothChat extends Activity {
         mButton4.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
                 // Send a message using content of the edit text widget
-                String message = "oseania";
+                String message = "d";
                 sendMessage(message);
             }
         });
@@ -240,7 +222,7 @@ public class BluetoothChat extends Activity {
         mButton5.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
                 // Send a message using content of the edit text widget
-                String message = "africa";
+                String message = "e";
                 sendMessage(message);
             }
         });
@@ -249,11 +231,83 @@ public class BluetoothChat extends Activity {
         mButton6.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
                 // Send a message using content of the edit text widget
-                String message = "north";
+                String message = "f";
                 sendMessage(message);
             }
         });
+        
+        mButton12 = (Button) findViewById(R.id.button12);
+        mButton12.setOnClickListener(new OnClickListener() {
+            public void onClick(View v) {
+                // Send a message using content of the edit text widget
+                String message = "g";
+                sendMessage(message);
+            }
+        });
+        
+        mButton7 = (Button) findViewById(R.id.button7);
+        mButton7.setOnClickListener(new OnClickListener() {
+            public void onClick(View v) {
+                // Send a message using content of the edit text widget
+               // String message = "k";
+                //sendMessage(message);
+            	if(weather.length()<5)
+            		weather += "k";
+            }
+        });
+        
+        mButton8 = (Button) findViewById(R.id.button8);
+        mButton8.setOnClickListener(new OnClickListener() {
+            public void onClick(View v) {
+                // Send a message using content of the edit text widget
+            	if(weather.length()<5)
+            		weather += "l";
+            }
+        });
+        
+        mButton9 = (Button) findViewById(R.id.button9);
+        mButton9.setOnClickListener(new OnClickListener() {
+            public void onClick(View v) {
+                // Send a message using content of the edit text widget
+            	if(weather.length()<5)
+            		weather += "m";
+            }
+        });
+        
+        mButton10 = (Button) findViewById(R.id.button10);
+        mButton10.setOnClickListener(new OnClickListener() {
+            public void onClick(View v) {
+                // Send a message using content of the edit text widget
+            	if(weather.length()<5)
+            		weather += "n";
+            }
+        });
+        
+        mButton11 = (Button) findViewById(R.id.button11);
+        mButton11.setOnClickListener(new OnClickListener() {
+            public void onClick(View v) {
+                // Send a message using content of the edit text widget
+            	if(weather.length()<5)
+            		weather += "o";
+            }
+        });
 
+        mSendButton = (Button) findViewById(R.id.button_send);
+        mSendButton.setOnClickListener(new OnClickListener() {
+        	public void onClick(View v) {
+                // Send a message using content of the edit text widget
+                if(weather == "")
+                	Log.i("test", "no");
+                else{
+                	for(int i=1;i<weather.length()+1;i++){
+                		String str = weather.substring(i-1,i);
+                		sendMessage(str);
+                		for(int j=0;j<50000000;j++);
+                	}
+                }
+            }
+        });
+        
         // Initialize the BluetoothChatService to perform bluetooth connections
         mChatService = new BluetoothChatService(this, mHandler);
 
@@ -305,30 +359,57 @@ public class BluetoothChat extends Activity {
         // Check that there's actually something to send
         if (message.length() > 0) {
         	
-        	byte[] send = message.getBytes();
             // Get the message bytes and tell the BluetoothChatService to write
-        	if(message == "asia"){
-        		byte[] test = {'1'};
+        	if(message == "a"){
+        		byte[] test = {'a'};
         		mChatService.write(test);
         	}
-        	else if(message == "euro"){
-        		byte[] test = {'2'};
+        	else if(message == "b"){
+        		byte[] test = {'b'};
         		mChatService.write(test);
         	}
-        	else if(message == "south"){
-        		byte[] test = {'3'};
+        	else if(message == "c"){
+        		byte[] test = {'c'};
         		mChatService.write(test);
         	}
-        	else if(message == "oseania"){
-        		byte[] test = {'4'};
+        	else if(message == "d"){
+        		byte[] test = {'d'};
         		mChatService.write(test);
         	}
-        	else if(message == "africa"){
-        		byte[] test = {'5'};
+        	else if(message == "e"){
+        		byte[] test = {'e'};
         		mChatService.write(test);
         	}
-        	else if(message == "north"){
-        		byte[] test = {'6'};
+        	else if(message == "f"){
+        		byte[] test = {'f'};
+        		mChatService.write(test);
+        	}
+        	else if(message == "g"){
+        		byte[] test = {'g'};
+        		mChatService.write(test);
+        	}
+        	else if(message == "k"){
+        		byte[] test = {'k'};
+        		mChatService.write(test);
+        	}
+        	else if(message == "l"){
+        		byte[] test = {'l'};
+        		mChatService.write(test);
+        	}
+        	else if(message == "m"){
+        		byte[] test = {'m'};
+        		mChatService.write(test);
+        	}
+        	else if(message == "n"){
+        		byte[] test = {'n'};
+        		mChatService.write(test);
+        	}
+        	else if(message == "o"){
+        		byte[] test = {'o'};
+        		mChatService.write(test);
+        	}
+        	else if(message == "p"){
+        		byte[] test = {'p'};
         		mChatService.write(test);
         	}
             Log.i("test", "send " + message.getBytes());
@@ -336,7 +417,6 @@ public class BluetoothChat extends Activity {
             
             // Reset out string buffer to zero and clear the edit text field
             mOutStringBuffer.setLength(0);
-            mOutEditText.setText(mOutStringBuffer);
             
         }
     }
@@ -456,5 +536,7 @@ public class BluetoothChat extends Activity {
         }
         return false;
     }
+    
+    
 
 }
